@@ -37,9 +37,11 @@ jobs:
           datee
   job3:
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs: [job1,job2]
     steps:
       - name: Run a multi-line script
         run: |
-          echo Welcome to job3
+          echo Welcome to job3!
+          date
   
