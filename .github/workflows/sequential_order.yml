@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,21 +25,15 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: echo Welcome to job1!
           
   job2:
     runs-on: windows-latest
     needs: job1
     steps:
       - name: Run a multi-line script
-        run: 
-          echo Hello, world!
+        run: |
+          echo Welcome to job2!
           datee
   job3:
     runs-on: ubuntu-latest
@@ -49,5 +41,5 @@ jobs:
     steps:
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
+          echo Welcome to job3
   
